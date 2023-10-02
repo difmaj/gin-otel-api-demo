@@ -10,6 +10,7 @@ import (
 	"go.opentelemetry.io/otel/sdk/trace"
 )
 
+// ConfigureOpenTelemetry configures the OpenTelemetry tracer and returns a function to shutdown the exporter.
 func ConfigureOpenTelemetry() func(ctx context.Context) error {
 	exporter, err := stdouttrace.New(stdouttrace.WithPrettyPrint())
 	if err != nil {
