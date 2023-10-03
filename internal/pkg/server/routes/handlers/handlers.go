@@ -12,7 +12,7 @@ import (
 	"go.opentelemetry.io/otel/trace"
 )
 
-// ToDoHandler is the struct that contains the service instances.
+// ToDoHandler contains the service instances.
 type ToDoHandler struct {
 	ToDoService *services.ToDoService
 	Tracer      trace.Tracer

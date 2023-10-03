@@ -20,7 +20,7 @@ type ToDoRepository interface {
 	Delete(context.Context, *entities.DeleteToDoRequest) (*entities.DeleteToDoResponse, error)
 }
 
-// ToDoService is the struct that implements the UseCase interface.
+// ToDoService implements the UseCase interface.
 type ToDoService struct {
 	repository ToDoRepository
 }

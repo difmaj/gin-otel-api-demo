@@ -59,7 +59,7 @@ func (s *ToDoCacheRepositorySuite) TestCreate() {
 		response, err := repo.Create(s.ctx, request)
 		s.Require().Error(err)
 		s.Require().Nil(response)
-		s.Require().ErrorIs(entities.ErrMissingTitle, err)
+		s.Require().ErrorIs(entities.ErrMissingToDoTitle, err)
 	})
 }
 

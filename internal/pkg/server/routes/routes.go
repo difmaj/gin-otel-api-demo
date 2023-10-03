@@ -10,7 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Routes is the struct that defines the routes.
+// Routes represents the routes of the application.
 type Routes struct {
 	Engine  *gin.Engine
 	Handler *handlers.ToDoHandler

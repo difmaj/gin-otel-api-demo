@@ -10,7 +10,7 @@ import (
 	"github.com/google/uuid"
 )
 
-// CacheRepository is the struct that implements the todo.CacheRepository interface.
+// CacheRepository implements the todo.CacheRepository interface.
 type CacheRepository struct {
 	cache gcache.Cache
 }
@@ -30,7 +30,7 @@ func (r *CacheRepository) recoverData(data interface{}) (*entities.ToDo, error) 
 
 	value, valid := data.([]byte)
 	if !valid {
-		return nil, entities.ErrFailureToRecoverData
+		return nil, entities.ErrFailureToRecoverToDoData
 	}
 
 	recovered := new(entities.ToDo)
@@ -45,7 +45,7 @@ func (r *CacheRepository) recoverData(data interface{}) (*entities.ToDo, error) 
 func (r *CacheRepository) Create(ctx context.Context, request *entities.CreateToDoRequest) (*entities.CreateToDoResponse, error) {
 
 	if request.Title == "" {
-		return nil, entities.ErrMissingTitle
+		return nil, entities.ErrMissingToDoTitle
 	}
 
 	newID := uuid.New()
